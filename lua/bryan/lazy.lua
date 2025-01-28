@@ -20,3 +20,4 @@ require("lazy").setup({ { import = "bryan.plugins" }, { import = "bryan.plugins.
     notify = false,
   },
 })
+
