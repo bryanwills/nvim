@@ -55,18 +55,20 @@ Below is a quick reference for the custom keymaps defined in this config. The `<
 
 Here are some useful LazyGit shortcuts for managing your git workflow:
 
-| Action         | Key in LazyGit      | What it does                |
-| -------------- | ------------------ | --------------------------- |
-| Stage file     | `space`            | Stage/unstage file          |
-| Commit         | `c`                | Open commit message prompt  |
-| Push           | `P` (shift + p)    | Push to remote (GitHub)     |
-| Pull           | `p`                | Pull from remote            |
-| Fetch          | `f`                | Fetch from remote           |
-| Quit LazyGit   | `q`                | Exit LazyGit                |
+| Action       | Key in LazyGit  | What it does               |
+| ------------ | --------------- | -------------------------- |
+| Stage file   | `space`         | Stage/unstage file         |
+| Commit       | `c`             | Open commit message prompt |
+| Push         | `P` (shift + p) | Push to remote (GitHub)    |
+| Pull         | `p`             | Pull from remote           |
+| Fetch        | `f`             | Fetch from remote          |
+| Quit LazyGit | `q`             | Exit LazyGit               |
+| cz commit    | `C` (shift + c) | cz commit                  |
 
 **Typical workflow:**
+
 1. Stage your file(s) with `space`.
-2. Commit with `c` and enter your message.
+2. Commit with `c` or `C` and enter your message.
 3. Push with `P`.
 
 ## Using Commitizen with LazyGit
@@ -93,6 +95,7 @@ tag_format = "v$version"
 ```
 
 Or for Node.js:
+
 ```json
 {
   "path": "cz-conventional-changelog"
