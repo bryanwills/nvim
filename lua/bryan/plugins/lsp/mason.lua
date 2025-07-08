@@ -5,12 +5,12 @@ return {
     "WhoIsSethDaniel/mason-tool-installer.nvim",
   },
   config = function()
-    -- import mason
+    -- HOW TO ADD MORE LSPs:
+    -- Add the server name to the ensure_installed list below.
+    -- Example: "tsserver" for TypeScript, "pyright" for Python, etc.
+    -- Mason will auto-install them and they will be set up in your lspconfig.
     local mason = require("mason")
-
-    -- import mason-lspconfig
     local mason_lspconfig = require("mason-lspconfig")
-
     local mason_tool_installer = require("mason-tool-installer")
 
     -- enable mason and configure icons
@@ -27,7 +27,8 @@ return {
     mason_lspconfig.setup({
       -- list of servers for mason to install
       ensure_installed = {
-        --"tsserver",
+        -- Add more language servers here as needed
+        --"tsserver", -- TypeScript/JavaScript
         "html",
         "cssls",
         "tailwindcss",
