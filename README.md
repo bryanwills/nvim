@@ -51,11 +51,66 @@ Below is a quick reference for the custom keymaps defined in this config. The `<
 - **Modes:** `n` = normal, `i` = insert
 - `<leader>` = spacebar
 
-## Customization
+## LazyGit Quick Shortcuts
 
-Feel free to edit the `lua/bryan/core/keymaps.lua` file to add or change keymaps to your liking.
+Here are some useful LazyGit shortcuts for managing your git workflow:
+
+| Action         | Key in LazyGit      | What it does                |
+| -------------- | ------------------ | --------------------------- |
+| Stage file     | `space`            | Stage/unstage file          |
+| Commit         | `c`                | Open commit message prompt  |
+| Push           | `P` (shift + p)    | Push to remote (GitHub)     |
+| Pull           | `p`                | Pull from remote            |
+| Fetch          | `f`                | Fetch from remote           |
+| Quit LazyGit   | `q`                | Exit LazyGit                |
+
+**Typical workflow:**
+1. Stage your file(s) with `space`.
+2. Commit with `c` and enter your message.
+3. Push with `P`.
+
+## Using Commitizen with LazyGit
+
+[Commitizen](https://commitizen-tools.github.io/commitizen/) helps you write standardized commit messages. You can integrate it with LazyGit for a better commit experience.
+
+### 1. Install Commitizen
+
+```sh
+pip install -U commitizen  # Python version
+# or
+npm install -g commitizen  # Node.js version
+```
+
+### 2. Add a Commitizen Configuration
+
+Create a `.cz.toml` (for Python) or `.czrc` (for Node.js) in your repo root. Example for Python:
+
+```toml
+[tool.commitizen]
+name = "cz_conventional_commits"
+version = "0.1.0"
+tag_format = "v$version"
+```
+
+Or for Node.js:
+```json
+{
+  "path": "cz-conventional-changelog"
+}
+```
+
+### 3. Use Commitizen in LazyGit
+
+- In LazyGit, press `C` (capital C) to open the custom command prompt.
+- Type:
+  ```sh
+  cz commit
+  ```
+- This will launch the Commitizen prompt for your commit message.
+- After committing, push as usual with `P`.
+
+**Tip:** You can also add a custom command in LazyGit's config to make this even easier.
 
 ---
 
-Enjoy your new Neovim setup! For questions org suggestions, open an issue or PR on the repo.
-
+Enjoy your new Neovim setup! For questions or suggestions, open an issue or PR on the repo.
